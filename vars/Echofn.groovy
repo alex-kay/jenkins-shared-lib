@@ -4,5 +4,6 @@ def call(String name = 'human') {
   script{
     sh 'echo Hello, ${name}.'
   }
+  return true;
   
 }
