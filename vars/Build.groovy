@@ -2,7 +2,7 @@
 def call() {
   withCredentials([usernamePassword(credentialsId: 'github_key', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
     sh('git tag -a "${BUILD_NUMBER}" -m "Added build tag"')
-    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@ --tags')
+    sh('git push https://${github_key}@github.com/alex-kay/jenkins-homework.git --tags')
 }
             sh '''
             npm run build
